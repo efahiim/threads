@@ -111,36 +111,36 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     name="profile_photo"
                     render={({ field }) => (
                         <FormItem className="flex items-center gap-4">
-                        <FormLabel className="account-form_image-label">
-                            {field.value ? (
-                                <Image
-                                    src={field.value}
-                                    alt="profile photo"
-                                    width={96}
-                                    height={96}
-                                    priority
-                                    className="rounded-full object-contain"
+                            <FormLabel className="account-form_image-label">
+                                {field.value ? (
+                                    <Image
+                                        src={field.value}
+                                        alt="profile photo"
+                                        width={96}
+                                        height={96}
+                                        priority
+                                        className="rounded-full object-contain"
+                                    />
+                                ) : (
+                                    <Image
+                                        src="/assets/profile.svg"
+                                        alt="profile photo"
+                                        width={24}
+                                        height={24}
+                                        className="object-contain"
+                                    />
+                                )}
+                            </FormLabel>
+                            <FormControl className="flex-1 text-base-semibold text-gray-200">
+                                <Input
+                                    type="file"
+                                    accept="image/*"
+                                    placeholder="Upload a photo"
+                                    className="account-form_image-input"
+                                    onChange={(e) => handleImage(e, field.onChange)}
                                 />
-                            ) : (
-                                <Image
-                                    src="/assets/profile.svg"
-                                    alt="profile photo"
-                                    width={24}
-                                    height={24}
-                                    className="object-contain"
-                                />
-                            )}
-                        </FormLabel>
-                        <FormControl className="flex-1 text-base-semibold text-gray-200">
-                            <Input
-                                type="file"
-                                accept="image/*"
-                                placeholder="Upload a photo"
-                                className="account-form_image-input"
-                                onChange={(e) => handleImage(e, field.onChange)}
-                            />
-                        </FormControl>
-                        <FormMessage />
+                            </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -150,15 +150,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     name="name"
                     render={({ field }) => (
                         <FormItem className="flex flex-col gap-3 w-full">
-                        <FormLabel className="text-base-semibold text-light-2">Name</FormLabel>
-                        <FormControl>
-                            <Input
-                                type="text"
-                                className="account-form_input no-focus"
-                                {...field}
-                            />
-                        </FormControl>
-                        <FormMessage />
+                            <FormLabel className="text-base-semibold text-light-2">Name</FormLabel>
+                            <FormControl>
+                                <Input
+                                    type="text"
+                                    className="account-form_input no-focus"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -168,15 +168,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     name="username"
                     render={({ field }) => (
                         <FormItem className="flex flex-col gap-3 w-full">
-                        <FormLabel className="text-base-semibold text-light-2">Username</FormLabel>
-                        <FormControl>
-                            <Input
-                                type="text"
-                                className="account-form_input no-focus"
-                                {...field}
-                            />
-                        </FormControl>
-                        <FormMessage />
+                            <FormLabel className="text-base-semibold text-light-2">Username</FormLabel>
+                            <FormControl>
+                                <Input
+                                    type="text"
+                                    className="account-form_input no-focus"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -186,15 +186,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     name="bio"
                     render={({ field }) => (
                         <FormItem className="flex flex-col gap-3 w-full">
-                        <FormLabel className="text-base-semibold text-light-2">Bio</FormLabel>
-                        <FormControl>
-                            <Textarea
-                                rows={10}
-                                className="account-form_input no-focus"
-                                {...field}
-                            />
-                        </FormControl>
-                        <FormMessage />
+                            <FormLabel className="text-base-semibold text-light-2">Bio</FormLabel>
+                            <FormControl>
+                                <Textarea
+                                    rows={10}
+                                    className="account-form_input no-focus"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -207,7 +207,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 </Button>
             </form>
         </Form>
-    )
-}
+    );
+};
 
 export default AccountProfile;
